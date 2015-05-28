@@ -1,0 +1,22 @@
+{
+  "name": "vi-rover",
+  "version": "1.0.0",
+  "description": "Control Your Rover with VI",
+  "main": "vi-rover.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Joe Cyboski",
+    "email": "cybo42@gmail.com>",
+    "url": "http://cybo42.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cybo42/vim-rover"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "keypress": "~0.2.1"
+  }
+}
