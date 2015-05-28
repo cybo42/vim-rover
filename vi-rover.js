@@ -18,6 +18,8 @@ board.on("ready", function() {
   console.log("\th = left");
   console.log("\tl = right");
   console.log("\tspace = stop");
+  console.log("\n");
+  console.log("Control-C to exit");
   console.log("\n\n\n\n\n");
 
   var motors = new five.Motors([
