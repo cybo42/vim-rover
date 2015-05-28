@@ -14,10 +14,11 @@ board.on("ready", function() {
   var self = this;
   console.log("vi-rover ready!");
   console.log("\tj = forward");
-  console.log("\tk = backward");
+  console.log("\tk = reverse");
   console.log("\th = left");
   console.log("\tl = right");
   console.log("\tspace = stop");
+  console.log("\n\n\n\n\n");
 
   var motors = new five.Motors([
     five.Motor.SHIELD_CONFIGS.POLOLU_DRV8835_SHIELD.M1,
@@ -42,26 +43,31 @@ board.on("ready", function() {
   process.stdin.on('keypress', function (ch, key) {
     debug('got "keypress"', key);
     if(key && key.name === 'space'){
+      console.log("      *** STOP ***");
       motors.stop();
     }
 
     if(key && key.name === 'j'){
+      console.log("      *** FORWARD ***");
       motors.fwd();
       motors.speed(DEFAULT_SPEED);
     }
 
     if(key && key.name === 'k'){
+      console.log("      *** REVERSE ***");
       motors.rev();
       motors.speed(DEFAULT_SPEED);
     }
 
     if(key && key.name === 'h'){
+      console.log("      *** LEFT ***");
       motors.stop();
       leftMotor.speed(TURNING_SPEED);
       rightMotor.speed(DEFAULT_SPEED);
     }
 
     if(key && key.name === 'l'){
+      console.log("      *** RIGHT ***");
       motors.stop();
       rightMotor.speed(TURNING_SPEED);
       leftMotor.speed(DEFAULT_SPEED);
