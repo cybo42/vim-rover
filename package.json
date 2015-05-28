@@ -17,6 +17,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "debug": "~2.2.0",
     "johnny-five": "~0.8.76",
     "keypress": "~0.2.1"
   }
