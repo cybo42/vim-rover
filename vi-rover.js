@@ -1,3 +1,4 @@
+var debug = require("debug")("rover");
 var keypress = require("keypress");
 
 var five = require("johnny-five");
@@ -6,8 +7,8 @@ var board = new five.Board({
   repl: false
 });
 
-var DEFAULT_SPEED = 100;
-var TURNING_SPEED = 30;
+var DEFAULT_SPEED = process.env.DEFAULT_SPEED || 100;
+var TURNING_SPEED = process.env.TURNING_SPEED || 30;
 
 board.on("ready", function() {
   var self = this;
@@ -39,7 +40,7 @@ board.on("ready", function() {
 
   // listen for the "keypress" event
   process.stdin.on('keypress', function (ch, key) {
-    console.log('got "keypress"', key);
+    debug('got "keypress"', key);
     if(key && key.name === 'space'){
       motors.stop();
     }
